@@ -1,9 +1,14 @@
 import java.io.*;
 
 public class Cryptographer {
+
+    private static final int KEY = 7;
+
     /**
-     * Metodo que criptografa um texto,
-     * utilizando a criptografia de Cesar.
+     * Metodo que criptografa um texto, utilizando a criptografia de Cesar.
+     * @param key Quantidade de caracteres que deverá ser "pulado", na tabela ASCII, para que o mesmo seja substituído e com isso "esconder" o texto original
+     * @param text Texto que deverá ser criptografado
+     * @return Texto criptografado
      */
     public static String encrypt(int key, String text){
         StringBuilder encryptedText = new StringBuilder();
@@ -18,8 +23,10 @@ public class Cryptographer {
     }
 
     /**
-     * Metodo que descriptografa um texto,
-     * utilizando a criptografia Cesar.
+     * Metodo que descriptografa um texto, utilizando a criptografia Cesar.
+     * @param key Quantidade de caracteres que deverá ser "pulado", na tabela ASCII, para que o mesmo seja substituído e com isso saber qual caracter de fato era o original
+     * @param encryptedText Texto criptografado
+     * @return Texto original, ou seja, sem a criptografia
      */
     public static String decrypt(int key, String encryptedText){
         StringBuilder text = new StringBuilder();
@@ -33,9 +40,14 @@ public class Cryptographer {
         return text.toString();
     }
 
-    public static String readFile(){
+    /**
+     * Método utilizado para ler o conteúdo escrito dentro de um arquivo
+     * @param fileName Nome do arquivo que será lido
+     * @return Texto lido
+     */
+    public static String readFile(String fileName){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("File/input.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
 
             String row;
             String text = "";
@@ -50,12 +62,17 @@ public class Cryptographer {
         return "";
     }
 
-    public static void writeFile(String text, String file){
+    /**
+     * Método utilizado para criar um arquivo e gravar nele um texto informado
+     * @param text Texto que será gravdo no arquivo gerado
+     * @param fileName Nome do arquivo que será criado
+     */
+    public static void writeFile(String text, String fileName){
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
 
         try{
-            fileWriter = new FileWriter(file, false);
+            fileWriter = new FileWriter(fileName, false);
             bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(text);
             bufferedWriter.newLine();
@@ -68,28 +85,17 @@ public class Cryptographer {
 
 
     public static void main(String[] args){
-
         try {
-            int key = 7;
-            String text = readFile();
-
-            System.out.println(text);
-
-            // Criptografando
-            String encryptedText = encrypt(key, text);
-
-            // Descriptografando
-            String decryptedText = decrypt(key, encryptedText);
-
-            writeFile(encryptedText, "File/output.txt");
-
-            System.out.println("\n\nTEXTO CRIPTOGRAFADO: " + encryptedText);
-            System.out.println("TEXTO DESCRIPTOGRAFADO: " + decryptedText);
-
-            System.out.println("*****************************************************");
-
+            if(args[0].equals("C")) {
+                String text = readFile(args[1]);
+                String encryptedText = encrypt(Cryptographer.KEY, text);
+                writeFile(encryptedText, args[2]);
+            } else {
+                String text = readFile(args[1]);
+                String decryptedText = decrypt(Cryptographer.KEY, text);
+                writeFile(decryptedText, args[2]);
+            }
         } catch (RuntimeException e) {
-            System.out.println("A chave de deslocamento foi informada incorretamente.");
             System.out.println("Execute o programa novamente e entre com uma chave valida.");
         }
     }
