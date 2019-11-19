@@ -15,8 +15,8 @@
 * **ARG3:** If the ARG1 is "D", specify the output file name: `output.txt`. If the ARG1 is "C", specify the encrypted file name: `encrypted.txt`.
 
 * **Examples:**
-  *`java Cryptographer C input.txt encrypted.txt`
-  *`java Cryptographer D encrypted.txt output.txt`
+ *`java Cryptographer C input.txt encrypted.txt`
+ *`java Cryptographer D encrypted.txt output.txt`
 
 **WARNING:**
 You need to encrypt a file before decrypt it
