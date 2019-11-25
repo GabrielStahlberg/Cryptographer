@@ -10,7 +10,7 @@ public class Cryptographer {
      * @param text Texto que deverá ser criptografado
      * @return Texto criptografado
      */
-    public static String encrypt(int key, String text){
+    private static String encrypt(int key, String text){
         StringBuilder encryptedText = new StringBuilder();
         int textSize = text.length();
 
@@ -28,7 +28,7 @@ public class Cryptographer {
      * @param encryptedText Texto criptografado
      * @return Texto original, ou seja, sem a criptografia
      */
-    public static String decrypt(int key, String encryptedText){
+    private static String decrypt(int key, String encryptedText){
         StringBuilder text = new StringBuilder();
         int textSize = encryptedText.length();
 
@@ -45,21 +45,52 @@ public class Cryptographer {
      * @param fileName Nome do arquivo que será lido
      * @return Texto lido
      */
-    public static String readFile(String fileName){
+    private static String readFile(String fileName){
         try {
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            if(fileName.endsWith(".txt")) {
+                File file = new File(fileName);
+                if(file.exists()) {
+                    if(isSizeOk(file.length())) {
+                        BufferedReader br = new BufferedReader(new FileReader(fileName));
 
-            String row;
-            String text = "";
+                        String row;
+                        String text = "";
 
-            while ((row = br.readLine()) != null) {
-                text = row;
+                        while ((row = br.readLine()) != null) {
+                            text = row;
+                        }
+                        return text;
+                    } else {
+                        System.out.println("Arquivo muito grande!");
+                    }
+                } else {
+                    System.out.println("Não existe arquivo com o nome que foi passado.");
+                }
+            } else {
+                System.out.println("A extensão do arquivo deve ser .txt");
             }
-            return text;
         } catch ( IOException e) {
             e.printStackTrace();
         }
         return "";
+    }
+
+    /**
+     * Método utilizado para verificar o tamanho do arquivo
+     * @param bytes Quantidade de bytes do arquivo
+     * @return TRUE se possuir menos que 20mb. FALSE caso contrário
+     */
+    private static boolean isSizeOk(long bytes) {
+        double kb = bytes / 1024;
+        double mb = kb / 1024;
+
+        System.out.println(bytes);
+        System.out.println(kb);
+        System.out.println(mb);
+        if(mb <= 20) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -68,18 +99,22 @@ public class Cryptographer {
      * @param fileName Nome do arquivo que será criado
      */
     public static void writeFile(String text, String fileName){
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
+        if(fileName.endsWith(".txt")) {
+            FileWriter fileWriter = null;
+            BufferedWriter bufferedWriter = null;
 
-        try{
-            fileWriter = new FileWriter(fileName, false);
-            bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(text);
-            bufferedWriter.newLine();
-            bufferedWriter.close();
+            try{
+                fileWriter = new FileWriter(fileName, false);
+                bufferedWriter = new BufferedWriter(fileWriter);
+                bufferedWriter.write(text);
+                bufferedWriter.newLine();
+                bufferedWriter.close();
 
-        }catch (IOException e) {
-            e.printStackTrace();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("A extensão do arquivo deve ser .txt");
         }
     }
 
@@ -96,7 +131,7 @@ public class Cryptographer {
                 writeFile(decryptedText, args[2]);
             }
         } catch (RuntimeException e) {
-            System.out.println("Execute o programa novamente e entre com uma chave valida.");
+            System.out.println("Execute o programa novamente e entre com os parâmetros corretamente.");
         }
     }
 }
