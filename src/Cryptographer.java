@@ -62,12 +62,15 @@ public class Cryptographer {
                         return text;
                     } else {
                         System.out.println("Arquivo muito grande!");
+                        System.exit(0);
                     }
                 } else {
                     System.out.println("Não existe arquivo com o nome passado.");
+                    System.exit(0);
                 }
             } else {
                 System.out.println("A extensão do arquivo deve ser .txt");
+                System.exit(0);
             }
         } catch ( IOException e) {
             e.printStackTrace();
@@ -112,6 +115,7 @@ public class Cryptographer {
             }
         } else {
             System.out.println("A extensão do arquivo deve ser .txt");
+            System.exit(0);
         }
     }
 
