@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fdb1b5e-12b3-42e8-9a55-b5ffa6473e51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cryptographer/Cryptographer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cryptographer/Cryptographer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cryptographer.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cryptographer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/output.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cryptographer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cryptographer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Cryptographer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1577">
-              <caret line="127" column="20" lean-forward="true" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+            <state relative-caret-position="87">
+              <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -54,10 +52,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1285" />
-    <option name="y" value="-33" />
-    <option name="width" value="1908" />
-    <option name="height" value="1052" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -71,11 +68,6 @@
             <path>
               <item name="cryptographer" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cryptographer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cryptographer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptographer" type="462c0819:PsiDirectoryNode" />
-              <item name="File" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cryptographer" type="b2602c69:ProjectViewProjectNode" />
@@ -144,10 +136,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1285" y="-33" width="1908" height="1052" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12647374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19063005" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -162,7 +154,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23541667" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -249,10 +241,17 @@
     <entry file="file://$PROJECT_DIR$/src/output.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Cryptographer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1577">
-          <caret line="127" column="20" lean-forward="true" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+        <state relative-caret-position="87">
+          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
         </state>
       </provider>
     </entry>

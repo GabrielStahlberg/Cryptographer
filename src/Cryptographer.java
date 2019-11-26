@@ -64,7 +64,7 @@ public class Cryptographer {
                         System.out.println("Arquivo muito grande!");
                     }
                 } else {
-                    System.out.println("Não existe arquivo com o nome que foi passado.");
+                    System.out.println("Não existe arquivo com o nome passado.");
                 }
             } else {
                 System.out.println("A extensão do arquivo deve ser .txt");
@@ -84,9 +84,6 @@ public class Cryptographer {
         double kb = bytes / 1024;
         double mb = kb / 1024;
 
-        System.out.println(bytes);
-        System.out.println(kb);
-        System.out.println(mb);
         if(mb <= 20) {
             return true;
         }
